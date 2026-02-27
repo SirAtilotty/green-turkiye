@@ -250,7 +250,7 @@ export function MainMenu({ onStart }: MainMenuProps) {
               <p className="text-slate-400 text-xs">
                 Tasarım &amp; Geliştirme — <a href="https://github.com/ahmojunior" target="_blank" rel="noopener noreferrer" style={{ textDecorationLine: 'underline' }}>ahmocodes</a>
               </p>
-              <p className="text-slate-500 text-xs">v0.1 • 2026</p>
+              <p className="text-slate-500 text-xs">v0.2 • 2026</p>
             </div>
           </div>
         </div>

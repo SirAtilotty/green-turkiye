@@ -1,9 +1,11 @@
 import { useGame } from './hooks/useGame';
+import { useQuests } from './hooks/useQuests';
 import { MainMenu } from './components/MainMenu';
 import { GameHUD } from './components/GameHUD';
 import { ManagementPanel } from './components/ManagementPanel';
 import { EventModal } from './components/EventModal';
 import { GameOver } from './components/GameOver';
+import { QuestPanel } from './components/QuestPanel';
 import { TurkeyMap } from './components/TurkeyMap';
 import { REGIONS } from './data/regions';
 import { AlertCircle } from 'lucide-react';
@@ -16,6 +18,8 @@ function App() {
     handleNodeClick,
     resetGame,
   } = useGame();
+
+  const { quests, toast } = useQuests(gameState);
 
   const currentRegion = REGIONS.find(r => r.id === gameState.regionId);
 
@@ -73,6 +77,9 @@ function App() {
 
       {/* HUD */}
       <GameHUD state={gameState} regionName={currentRegion?.name || 'Bilinmeyen Bölge'} />
+
+      {/* Quest Panel */}
+      <QuestPanel quests={quests} toast={toast} />
 
       {/* Management Panel */}
       <ManagementPanel />
