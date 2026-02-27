@@ -19,11 +19,14 @@ export const TurkeyMap = memo(function TurkeyMap({ onRegionSelect, selectedRegio
   const filterStyle = {
     filter: `
       drop-shadow(0px 10px 10px rgba(0,0,0,0.2)) 
-      sepia(${pollutionFactor > 50 ? (pollutionFactor - 50) * 2 : 0}%)
+      sepia(${pollutionFactor > 30 ? (pollutionFactor - 30) * 1.5 : 0}%)
+      brightness(${100 - (pollutionFactor / 3)}%)
+      saturate(${100 + (pollutionFactor / 2)}%)
       grayscale(${pollutionFactor > 20 ? (pollutionFactor - 20) : 0}%)
     `,
-    transition: 'filter 1s ease-in-out'
+    transition: 'filter 1.5s ease-in-out'
   };
+
 
   return (
     <div className="w-full h-full flex items-center justify-center p-4 relative">
@@ -61,13 +64,6 @@ export const TurkeyMap = memo(function TurkeyMap({ onRegionSelect, selectedRegio
         </g>
       </svg>
 
-      {/* Smog Overlay for Critical Levels */}
-      {cleanliness < 40 && (
-        <div
-          className="absolute inset-0 pointer-events-none mix-blend-multiply bg-amber-900/20 z-10 animate-pulse"
-          style={{ opacity: (40 - cleanliness) / 40 }}
-        ></div>
-      )}
     </div>
   );
 });

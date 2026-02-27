@@ -49,16 +49,16 @@ export function EventModal({ event, onChoice }: EventModalProps) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm p-4">
-      <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden animate-in fade-in zoom-in duration-300">
+      <div className="bg-slate-950/70 backdrop-blur-md border border-white/10 rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden animate-in fade-in zoom-in duration-300">
 
         {/* Header */}
-        <div className="bg-red-50 p-6 border-b border-red-100 flex items-start gap-4">
-          <div className="bg-red-100 p-3 rounded-full">
-            <AlertTriangle className="w-8 h-8 text-red-600" />
+        <div className="bg-red-900/20 p-6 border-b border-red-500/20 flex items-start gap-4">
+          <div className="bg-red-500/20 p-3 rounded-full">
+            <AlertTriangle className="w-8 h-8 text-red-500" />
           </div>
           <div>
-            <h2 className="text-2xl font-bold text-gray-900">{event.title}</h2>
-            <p className="text-gray-600 mt-1">{event.description}</p>
+            <h2 className="text-2xl font-bold text-white">{event.title}</h2>
+            <p className="text-red-200/80 mt-1">{event.description}</p>
           </div>
         </div>
 
@@ -68,10 +68,10 @@ export function EventModal({ event, onChoice }: EventModalProps) {
             <button
               key={index}
               onClick={(e) => handleChoiceClick(e, index)}
-              className="text-left w-full p-4 rounded-xl border-2 border-gray-100 hover:border-blue-500 hover:bg-blue-50 transition-all group"
+              className="text-left w-full p-4 rounded-xl border border-white/10 bg-white/5 hover:border-blue-500/50 hover:bg-blue-900/20 transition-all group"
             >
-              <p className="font-bold text-gray-800 group-hover:text-blue-700">{choice.text}</p>
-              <div className="flex gap-3 mt-2 text-xs font-medium opacity-70">
+              <p className="font-bold text-white">{choice.text}</p>
+              <div className="flex gap-3 mt-2 text-xs font-medium text-slate-400 opacity-70">
                 {/* Hints removed for difficulty balance */}
               </div>
             </button>
