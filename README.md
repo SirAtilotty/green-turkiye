@@ -89,7 +89,7 @@ Follow these steps to get the project up and running on your local machine.
 
 ## <div align="center">⚖️ | License</div>
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the GNU Affero General Public License v3.0 - see the [LICENSE](LICENSE) file for details.
 
 <br />
 
